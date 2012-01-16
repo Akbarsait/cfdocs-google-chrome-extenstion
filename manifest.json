@@ -1,0 +1,11 @@
+{
+  "name": "ColdFusion Docs",
+  "version": "1.0",
+  "description": "An extension for ColdFusion Developers to perform CF Tags and Function reference search in a Lighting fast way using CFDocs.org.",
+   "icons": { "128": "icon_048.png" },
+  "browser_action": {
+  	"default_title": "ColdFusion Docs",
+    "default_icon": "icon_032.png",
+	 "popup": "cfdocs.html"
+  } 
+}

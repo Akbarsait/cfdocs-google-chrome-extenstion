@@ -1,0 +1,79 @@
+<!--
+	Name    : cfdocs.html
+	Author  : Akbarsait (akbarsaitn.cfmx@gmail.com)
+	Notes	: Defines the CSS, HTML and JS for ColdFusion Docs(CFDocs.org) Google Chrome Extension.
+	Added	: October  22, 2011
+	Histroy : File created on Oct 22, 2011. 
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html>
+	<head>
+		<script type="text/javascript">
+		    window.onload = function() {
+		        document.getElementById("strSearch").focus();
+		    }
+		    function launchCFDocs() {
+		        window.open("http://cfdocs.org/");
+		    }
+		
+		    function checkPressEnter(e) {
+		        if (e.keyCode == 13) getCFDocsLink();
+		    }
+			
+		    function getCFDocsLink() {
+				//CFDocs Query String Format - http://cfdocs.org/cfquery
+				window.open("http://cfdocs.org/"+ document.getElementById("strSearch").value);
+			}
+		</script>
+	
+		<style type="text/css">
+		  	a { text-decoration:none; font-size:0.7em; }
+		 	img { border:0; }
+		  	img.centre { vertical-align:middle; }
+		  	div#pagecontent { width:290px; }
+		 	form {
+				margin: 2px 2px; 
+				padding: 2px 2px 2px 2px;
+			}
+			input{
+				margin: 2px 0;
+				padding: 2px;
+				border-width: 1px;
+				border-style: solid;
+				font: 11px 'Lucida Grande', Verdana, Helvetica, sans-serif;
+			}
+			input#button{
+				border-width: 2px;
+				border-style: outset;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="pagecontent">
+			<form>
+				<a	href="javscript:;" 
+					onclick="launchCFDocs()" 
+					title="Launch CFDocs.org!">
+					<img src="icon_048.png" class="centre" height="48" width="48" />
+				</a>
+				
+				<input 
+					id="strSearch" 
+					type="text" 
+					size="30" 
+					name="strSearch" 
+					onkeypress="checkPressEnter(event)"
+					title="Enter text to Search..." />
+					
+				<input 
+					type="button"
+					id="button" 
+					name="Submit"
+					value="Search" 
+					onclick="getCFDocsLink();" 
+					title="Search CFDocs.org"
+					alt="search" />
+			</form>
+		</div>
+</body>
+</html>
